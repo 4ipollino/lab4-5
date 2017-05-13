@@ -19,6 +19,6 @@
     </context-param>
     <error-page>
         <exception-type>java.lang.NumberFormatException</exception-type>
-        <location>/</location>
+        <location>/ErrorServlet</location>
     </error-page>
 </web-app>
