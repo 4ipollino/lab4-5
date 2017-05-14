@@ -25,7 +25,7 @@
     String emailAddress = request.getParameter("emailAddress");
     // получение реального пути для файла EmailList.txt
     ServletContext sc = this.getServletConfig().getServletContext();
-    String path = sc.getRealPath("/WEB-INF/EmailList.txt");
+    String path = sc.getRealPath("/web/WEB-INF/EmailList.txt");
     // использование регулярных объектов Java
     User user = new User(firstName, lastName, emailAddress);
     UserIO.add(user, path);
