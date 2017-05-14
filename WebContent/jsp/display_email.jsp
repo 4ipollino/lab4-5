@@ -10,12 +10,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=IUTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Простое приложение</title>
 </head>
 <body>
-<!-- импорт пакетотов и классов, необходиых для скриптов -->
 
+<!-- импорт пакетотов и классов, необходиых для скриптов -->
 <%@ page import="ifmo.ru.business.User" %>
 <%@ page import="ifmo.ru.business.UserIO" %>
 <%
@@ -25,7 +25,7 @@
     String emailAddress = request.getParameter("emailAddress");
     // получение реального пути для файла EmailList.txt
     ServletContext sc = this.getServletConfig().getServletContext();
-    String path = sc.getRealPath("/web/WEB-INF/EmailList.txt");
+    String path = sc.getRealPath("/WEB-INF/EmailList.txt");
     // использование регулярных объектов Java
     User user = new User(firstName, lastName, emailAddress);
     UserIO.add(user, path);
@@ -56,7 +56,7 @@
     Чтобы ввести другой адрес, нажмите кнопку Back <br> в браузере
     или кнопку Возврат <br> ниже.
 </p>
-<form action="/lab4/html/email_list.html" method="post">
+<form action="${pageContext.request.contextPath}/lab4/html/email_list.html" method="post">
     <input type="submit" value="Возврат">
 </form>
 </body>
