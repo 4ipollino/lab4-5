@@ -1,3 +1,4 @@
+<jsp:useBean id="user" scope="request" class="ifmo.ru.business.User"/>
 <%--
   Created by IntelliJ IDEA.
   User: chip0llino
